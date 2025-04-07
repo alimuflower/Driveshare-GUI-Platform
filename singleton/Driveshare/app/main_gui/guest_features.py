@@ -143,7 +143,7 @@ def show_payment_interface(root, app):
     tk.Label(app.main_frame, text=f"Final Total: ${discount_total:.2f}").pack()
 
     def confirm_payment():
-        app.payment_proxy.process_payment(user, car.owner, discount_total)
+        app.payment_proxy.pay(discount_total, car.owner)
         app.booking_service.checkout()
         app.guest_dashboard()
 

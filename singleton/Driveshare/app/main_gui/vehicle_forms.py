@@ -38,6 +38,14 @@ def show_add_vehicle_form(root, app):
     location_entry = tk.Entry(frame)
     location_entry.pack()
 
+    tk.Label(app.main_frame, text="Discounts: 3, 7, 20 days (%):").pack()
+    d3_entry = tk.Entry(frame);# d3.insert(0, str(car.discounts.get("3", 0)*100)); d3.pack()
+    d7_entry = tk.Entry(frame);# d7.insert(0, str(car.discounts.get("7", 0)*100)); d7.pack()
+    d20_entry = tk.Entry(frame);# d20.insert(0, str(car.discounts.get("20", 0)*100)); d20.pack()
+    d3_entry.pack()
+    d7_entry.pack()
+    d20_entry.pack()
+
     def submit():
         try:
             make = make_var.get()
@@ -50,9 +58,12 @@ def show_add_vehicle_form(root, app):
                 raise ValueError("Mileage must be between 0 and 125000")
             price = float(price_entry.get())
             location = location_entry.get()
+            d3 = float(d3_entry.get())
+            d7 = float(d7_entry.get())
+            d20 = float(d20_entry.get())
             full_model = f"{make} {model}"
             availability = [(datetime.today() + timedelta(days=i)).strftime("%Y-%m-%d") for i in range(30)]
-            app.car_service.add_car(user.email, full_model, year, mileage, price, location, availability)
+            app.car_service.add_car(user.email, full_model, year, mileage, price, location, availability, d3, d7, d20)
             messagebox.showinfo("Success", "Vehicle added!")
             app.host_dashboard()
         except ValueError as e:

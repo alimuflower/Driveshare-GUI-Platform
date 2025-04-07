@@ -137,43 +137,43 @@ class DriveShareGUI:
             widget.destroy()
 
     def add_vehicle(self):
-        from .vehicle_forms import show_add_vehicle_form
+        from app.main_gui.vehicle_forms import show_add_vehicle_form
         show_add_vehicle_form(self.root, self)
 
     def edit_vehicle(self):
-        from .vehicle_forms import show_edit_vehicle_form
+        from app.main_gui.vehicle_forms import show_edit_vehicle_form
         show_edit_vehicle_form(self.root, self)
 
     def view_cars(self):
-        from .guest_features import show_available_cars
+        from app.main_gui.guest_features import show_available_cars
         show_available_cars(self.root, self)
 
     def book_car(self):
-        from .guest_features import show_booking_form
+        from app.main_gui.guest_features import show_booking_form
         show_booking_form(self.root, self)
 
     def send_message_to_host(self):
-        from .guest_features import send_message_to_host_gui
+        from app.main_gui.guest_features import send_message_to_host_gui
         send_message_to_host_gui(self.root, self)
 
     def leave_review(self):
-        from .guest_features import leave_review_gui
+        from app.main_gui.guest_features import leave_review_gui
         leave_review_gui(self.root, self)
 
     def make_payment(self):
-        from .guest_features import show_payment_interface
+        from app.main_gui.guest_features import show_payment_interface
         show_payment_interface(self.root, self)
 
     def view_rental_history(self):
-        from .guest_features import view_rental_history_gui
+        from app.main_gui.guest_features import view_rental_history_gui
         view_rental_history_gui(self.root, self)
 
     def view_inbox(self):
-        from .host_features import view_inbox_gui
+        from app.main_gui.host_features import view_inbox_gui
         view_inbox_gui(self.root, self)
 
     def view_reviews(self):
-        from .host_features import view_reviews_gui
+        from app.main_gui.host_features import view_reviews_gui
         view_reviews_gui(self.root, self)
 
     def logout(self):

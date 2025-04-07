@@ -54,7 +54,7 @@ class CarDirector:
     def __init__(self, builder: CarBuilder):
         self._builder = builder
 
-    def create_basic_car(self, owner_email, model, year, mileage, price, location, availability, discounts=None):
+    def create_basic_car(self, owner_email, model, year, mileage, price, location, availability, discounts):
         car_builder = (
             self._builder
             .set_owner(owner_email)
@@ -64,6 +64,7 @@ class CarDirector:
             .set_price_per_day(price)
             .set_location(location)
             .set_availability(availability)
+            .set_discounts(discounts)
         )
         if discounts:
             car_builder.set_discounts(discounts)

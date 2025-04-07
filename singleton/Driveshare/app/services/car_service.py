@@ -17,7 +17,7 @@ class CarService:
     def calculate_price(self, car, days, user):
         return self.pricing_strategy.calculate_price(car.price_per_day, days, user)
 
-    def add_car(self, owner_email, model, year, mileage, price, location, availability):
+    def add_car(self, owner_email, model, year, mileage, price, location, availability, d3, d7, d20):
         car = self.director.create_basic_car(
             owner_email=owner_email,
             model=model,
@@ -25,14 +25,19 @@ class CarService:
             mileage=mileage,
             price=price,
             location=location,
-            availability=availability
+            availability=availability,
+            discounts = {
+                "3": (d3 / 100 if d3 > 0 else 0),
+                "7": (d7 / 100 if d7 > 0 else 0),
+                "20": (d20 / 100 if d20 > 0 else 0)
+                }
         )
 
         print("\nDefine optional discounts for long bookings:")
         try:
-            d3 = float(input("% discount for 3-day bookings (e.g., 5 for 5%): ") or 0)
-            d7 = float(input("% discount for 7-day bookings (e.g., 10 for 10%): ") or 0)
-            d20 = float(input("% discount for 20-day bookings (e.g., 15 for 15%): ") or 0)
+            #d3 = float(input("% discount for 3-day bookings (e.g., 5 for 5%): ") or 0)
+            #d7 = float(input("% discount for 7-day bookings (e.g., 10 for 10%): ") or 0)
+            #d20 = float(input("% discount for 20-day bookings (e.g., 15 for 15%): ") or 0)
             car.discounts = {
                 "3": d3 / 100 if d3 > 0 else 0,
                 "7": d7 / 100 if d7 > 0 else 0,
