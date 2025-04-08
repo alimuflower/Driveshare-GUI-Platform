@@ -3,7 +3,7 @@ from app.patterns.class_strategy import PricingStrategy, StandardPricing
 
 class CarService:
     """
-    Service for creating and managing car listings.
+    Service for creating and managing car listings .
     """
     def __init__(self):
         self.car_list = []  # in-memory list for now

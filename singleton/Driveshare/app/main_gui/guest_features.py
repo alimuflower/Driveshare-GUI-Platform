@@ -128,9 +128,6 @@ def show_payment_interface(root, app):
             host_discount = car.discounts[key]
     discount_total -= discount_total * host_discount
 
-    guest_discount = 0.1 if simpledialog.askstring("Promo", "Enter promo code (optional):") == "firstride" else 0
-    if guest_discount:
-        discount_total -= discount_total * guest_discount
 
     tk.Label(app.main_frame, text="=== Payment Preview ===", font=("Helvetica", 12)).pack(pady=10)
     tk.Label(app.main_frame, text=f"Car: {car.model}").pack()
@@ -138,8 +135,6 @@ def show_payment_interface(root, app):
     tk.Label(app.main_frame, text=f"Base Total: ${base_total:.2f}").pack()
     if host_discount:
         tk.Label(app.main_frame, text=f"Host Discount: {int(host_discount*100)}%").pack()
-    if guest_discount:
-        tk.Label(app.main_frame, text="Guest Discount: 10% (firstride)").pack()
     tk.Label(app.main_frame, text=f"Final Total: ${discount_total:.2f}").pack()
 
     def confirm_payment():

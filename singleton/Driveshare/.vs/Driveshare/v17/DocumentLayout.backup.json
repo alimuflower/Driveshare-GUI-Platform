@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\CoolA\\source\\repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D7838B37-3011-4C19-B783-457A760D1B41}|Driveshare.pyproj|C:\\Users\\CoolA\\source\\repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\app\\main_gui\\main_gui.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{D7838B37-3011-4C19-B783-457A760D1B41}|Driveshare.pyproj|solutionrelative:app\\main_gui\\main_gui.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D7838B37-3011-4C19-B783-457A760D1B41}|Driveshare.pyproj|C:\\Users\\CoolA\\Source\\Repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\app\\main_gui\\guest_features.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{D7838B37-3011-4C19-B783-457A760D1B41}|Driveshare.pyproj|solutionrelative:app\\main_gui\\guest_features.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D7838B37-3011-4C19-B783-457A760D1B41}|Driveshare.pyproj|C:\\Users\\CoolA\\source\\repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\app\\services\\payment_proxy.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{D7838B37-3011-4C19-B783-457A760D1B41}|Driveshare.pyproj|solutionrelative:app\\services\\payment_proxy.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7838B37-3011-4C19-B783-457A760D1B41}|Driveshare.pyproj|C:\\Users\\CoolA\\source\\repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\app\\main_gui\\main_gui.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D7838B37-3011-4C19-B783-457A760D1B41}|Driveshare.pyproj|solutionrelative:app\\main_gui\\main_gui.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D7838B37-3011-4C19-B783-457A760D1B41}|Driveshare.pyproj|C:\\Users\\CoolA\\source\\repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\app\\main_gui\\vehicle_forms.py||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -74,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -214,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "main_gui.py",
               "DocumentMoniker": "C:\\Users\\CoolA\\source\\repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\app\\main_gui\\main_gui.py",
               "RelativeDocumentMoniker": "app\\main_gui\\main_gui.py",
@@ -239,25 +239,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "payment_proxy.py",
               "DocumentMoniker": "C:\\Users\\CoolA\\source\\repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\app\\services\\payment_proxy.py",
               "RelativeDocumentMoniker": "app\\services\\payment_proxy.py",
               "ToolTip": "C:\\Users\\CoolA\\source\\repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\app\\services\\payment_proxy.py",
               "RelativeToolTip": "app\\services\\payment_proxy.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAALAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2025-04-07T05:30:36.076Z"
+              "WhenOpened": "2025-04-07T05:30:36.076Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "guest_features.py",
               "DocumentMoniker": "C:\\Users\\CoolA\\source\\repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\app\\main_gui\\guest_features.py",
               "RelativeDocumentMoniker": "app\\main_gui\\guest_features.py",
               "ToolTip": "C:\\Users\\CoolA\\source\\repos\\Driveshare-GUI-Platform\\singleton\\Driveshare\\app\\main_gui\\guest_features.py",
               "RelativeToolTip": "app\\main_gui\\guest_features.py",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAuwDwAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAIkAAABKAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
               "WhenOpened": "2025-04-07T05:17:40.842Z",
               "EditorCaption": ""

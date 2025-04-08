@@ -8,18 +8,10 @@ class RecoveryHandler:
         self.next_handler = next_handler
 
     def handle(self, correct_answer, attempt):
-        if self.check(correct_answer, attempt):
-            if self.next_handler:
-                return self.next_handler.handle_chain()
-            return True
-        return False
+        return correct_answer.strip().lower() == attempt.strip().lower()
 
-    def check(self, correct, attempt):
-        return correct.strip().lower() == attempt.strip().lower()
-
-    def handle_chain(self):
+    def handle_chain(self, answers):
         raise NotImplementedError()
-
 
 class SecurityQuestionHandler(RecoveryHandler):
     def __init__(self, question_text, correct_answer, next_handler=None):
@@ -27,10 +19,18 @@ class SecurityQuestionHandler(RecoveryHandler):
         self.question_text = question_text
         self.correct_answer = correct_answer
 
-    def handle_chain(self):
-        print(f"[Security Question] {self.question_text}")
-        attempt = input("Answer: ")
-        return self.handle(self.correct_answer, attempt)
+    def handle_chain(self, answers):
+        if not answers:
+            return False
+
+        attempt = answers.pop(0)
+
+        if self.handle(self.correct_answer, attempt):
+            if self.next_handler:
+                return self.next_handler.handle_chain(answers)
+            return True
+        return False
+
 
 
 class AuthService:
@@ -91,7 +91,7 @@ class AuthService:
             print(f"[AuthService] User '{current_user.email}' has been logged out.")
         self.session.logout()
 
-    def recover_password(self, email):
+    def recover_password(self, email, answers):
         """
         Initiates password recovery using security questions.
         """
@@ -107,13 +107,14 @@ class AuthService:
         q1.next_handler = q2
         q2.next_handler = q3
 
+
         print("[AuthService] Answer the following security questions:")
-        if q1.handle_chain():
+        if q1.handle_chain(answers):
             print("[AuthService] Identity confirmed. You may now reset your password.")
-            return True
+            return user.password
         else:
             print("[AuthService] Security answers incorrect. Password recovery failed.")
-            return False
+            return None
 
     def get_user_by_email(self, email):
         """

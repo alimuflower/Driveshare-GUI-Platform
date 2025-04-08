@@ -59,19 +59,11 @@ class BookingService:
         base_total = car.price_per_day * days
         final_total = base_total
 
-        # Host discount
         host_discount = 0
         for key in ["3", "7", "20"]:
             if int(key) <= days and key in car.discounts:
                 host_discount = car.discounts[key]
         final_total -= final_total * host_discount
-
-        # Guest discount
-        guest_discount = 0
-        code = input("Enter discount code if you have one (or press Enter to skip): ").strip().lower()
-        if code == "firstride":
-            guest_discount = 0.1
-            final_total -= final_total * guest_discount
 
         # Show receipt preview
         print("\n=== Checkout Preview ===")
@@ -83,16 +75,14 @@ class BookingService:
         print(f"Base Total: ${base_total:.2f}")
         if host_discount > 0:
             print(f"Host Discount Applied: {int(host_discount * 100)}%")
-        if guest_discount > 0:
-            print(f"Guest Discount Applied: 10% (firstride)")
         print(f"Final Total: ${final_total:.2f}")
         print("=========================")
 
-        confirm = input("Do you want to confirm this booking? (y/n): ").strip().lower()
-        if confirm != "y":
-            print("[BookingService] Booking cancelled.")
-            del self.active_bookings[user.email]
-            return
+        #confirm = input("Do you want to confirm this booking? (y/n): ").strip().lower()
+        #if confirm != "y":
+        #    print("[BookingService] Booking cancelled.")
+        #    del self.active_bookings[user.email]
+        #    return
 
         # Reserve dates
         booked_dates = car.availability[:days]

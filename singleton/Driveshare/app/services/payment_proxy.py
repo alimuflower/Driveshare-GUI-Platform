@@ -16,7 +16,7 @@ class PaymentProxy:
             return False
 
         user.balance -= amount
-        print("Balance:" + user.balance)
+        print("Balance:" + str(user.balance))
 
         # Simulated notification
         print(f"[PaymentProxy] ${amount:.2f} paid to {recipient_email} by {user.email}")

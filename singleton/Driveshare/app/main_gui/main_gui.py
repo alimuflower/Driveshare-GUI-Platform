@@ -1,4 +1,5 @@
-﻿import tkinter as tk
+﻿import email
+import tkinter as tk
 from tkinter import messagebox, simpledialog, ttk
 from app.services.auth_service import AuthService
 from app.services.car_service import CarService
@@ -32,6 +33,7 @@ class DriveShareGUI:
         tk.Label(self.main_frame, text="Welcome to DriveShare", font=("Helvetica", 16)).pack(pady=10)
         tk.Button(self.main_frame, text="Login", width=20, command=self.login_user).pack(pady=5)
         tk.Button(self.main_frame, text="Register", width=20, command=self.register_user).pack(pady=5)
+        tk.Button(self.main_frame, text="Forgot Password", width=20, command=self.show_forgot).pack(pady=5)
         tk.Button(self.main_frame, text="Exit", width=20, command=self.root.quit).pack(pady=5)
 
     def login_user(self):
@@ -59,6 +61,49 @@ class DriveShareGUI:
         tk.Button(self.main_frame, text="Login", command=attempt_login).pack(pady=10)
         tk.Button(self.main_frame, text="Back", command=self.show_main_menu).pack()
 
+
+    def show_forgot(self):
+        self.clear_frame()
+        tk.Label(self.main_frame, text="Answer the following questions:", font=("Helvetica", 16)).pack(pady=10)
+
+
+        tk.Label(self.main_frame, text="What is your email?").pack(pady=10)
+        email_entry = tk.Entry(self.main_frame)
+        email_entry.pack()
+
+        tk.Label(self.main_frame, text="What is your favorite color?").pack(pady=10)
+        color_entry = tk.Entry(self.main_frame)
+        color_entry.pack()
+
+        tk.Label(self.main_frame, text="What is the name of your pet?").pack(pady=10)
+        pet_entry = tk.Entry(self.main_frame)
+        pet_entry.pack()
+
+        tk.Label(self.main_frame, text="What is the name of the city you were born in?").pack(pady=10)
+        city_entry = tk.Entry(self.main_frame)
+        city_entry.pack()
+
+        def submit_answers():
+            email = email_entry.get()
+            answers = [
+                color_entry.get(),
+                pet_entry.get(),
+                city_entry.get()
+            ]
+
+            success = self.auth_service.recover_password(email, answers)
+
+
+            if success:
+                tk.messagebox.showinfo("Success", f"Identity confirmed. your password is: {success}")
+            else:
+                tk.messagebox.showerror("Failed", "Security answers incorrect. Password recovery failed.")
+
+        tk.Button(self.main_frame, text="Submit", command=submit_answers).pack(pady=10)
+        tk.Button(self.main_frame, text="Back", command=self.show_main_menu).pack(pady=10)
+
+
+
     def register_user(self):
         self.clear_frame()
         tk.Label(self.main_frame, text="Full Name: ").pack()
@@ -72,6 +117,9 @@ class DriveShareGUI:
         tk.Label(self.main_frame, text="Password: ").pack()
         password_entry = tk.Entry(self.main_frame, show="*")
         password_entry.pack()
+
+        def getPass():
+            return password_entry.get()
 
         tk.Label(self.main_frame, text="Role (host/guest):").pack()
         role_entry = tk.Entry(self.main_frame)
@@ -95,6 +143,7 @@ class DriveShareGUI:
             password = password_entry.get()
             role = role_entry.get().lower()
             answers = [q1_entry.get(), q2_entry.get(), q3_entry.get()]
+
 
             self.auth_service.register_user(email, password, name, answers, role)
             user = self.auth_service.get_user_by_email(email)
@@ -125,7 +174,7 @@ class DriveShareGUI:
         tk.Label(self.main_frame, text=f"Welcome, {user.name} (Guest)", font=("Helvetica", 14)).pack(pady=10)
         tk.Button(self.main_frame, text="Browse Cars", command=self.view_cars).pack(pady=5)
         tk.Button(self.main_frame, text="Book a Car", command=self.book_car).pack(pady=5)
-        tk.Button(self.main_frame, text="Checkout", command=self.booking_service.checkout).pack(pady=5)
+        #tk.Button(self.main_frame, text="Checkout", command=self.booking_service.checkout).pack(pady=5)
         tk.Button(self.main_frame, text="Send Message to Host", command=self.send_message_to_host).pack(pady=5)
         tk.Button(self.main_frame, text="Leave a Review", command=self.leave_review).pack(pady=5)
         tk.Button(self.main_frame, text="Pay for Rental", command=self.make_payment).pack(pady=5)

@@ -15,18 +15,17 @@ class Host:
         self.email = email
         self.name = name
         self.role = "host"
-        self.password_hash = self._hash_password(password)
+        self.password = password
         self.security_answers = security_answers  # list of 3 answers
         self.balance = 1000  # default balance for simulation
         self.rental_history = []  # list to store rental records
         self.reviews = []  # list to store reviews
-        self.loyalty_points = 0  # for discounts
 
-    def _hash_password(self, password):
-        return hashlib.sha256(password.encode()).hexdigest()
+    #def _hash_password(self, password):
+    #    return hashlib.sha256(password.encode()).hexdigest()
 
-    def check_password(self, password_attempt):
-        return self.password_hash == self._hash_password(password_attempt)
+    #def check_password(self, password_attempt):
+    #    return self.password_hash == self._hash_password(password_attempt)
 
     def validate_security_answers(self, answers):
         return self.security_answers == answers
