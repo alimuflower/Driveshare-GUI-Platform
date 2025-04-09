@@ -52,8 +52,9 @@ DriveShare is a GUI-based Python application that allows users to share and rent
 
 ### 1. Clone the Repository:
 ```bash
-git clone https://github.com/yourusername/driveshare.git
-cd driveshare
+git clone https://github.com/alimuflower/Driveshare-GUI-Platform.git
+cd singleton
+cd Driveshare
 ```
 
 ### 2. Run the App:
@@ -63,12 +64,6 @@ python -m app.main_gui.main_gui
 
 > 💡 Ensure Python 3.10+ is installed. GUI runs via Tkinter (standard in most Python installs).
 
-### 3. Run Unit Tests:
-```bash
-python -m unittest discover tests
-```
-
----
 
 ## 📁 Project Structure
 ```
@@ -95,9 +90,6 @@ singleton/
 │         ├── vehicle_forms.py
 │         ├── guest_features.py
 │         └── host_features.py
-|  ├── tests/
-|     ├── __init__.py
-|     └── test_driveshare_features.py
 ├── README.md
 ```
 
