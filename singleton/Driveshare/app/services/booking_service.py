@@ -1,8 +1,14 @@
 ﻿from app.patterns.singleton import SessionManager
+from app.services import messaging_service
 
 class BookingObserver:
-    def update(self, message):
-        print(f"[BookingObserver] {message}")
+    def __init__(self, messaging_service):
+        self.messaging_service = messaging_service
+
+    def update(self, guest, owner, car_model):
+        content = f"Your car '{car_model}' has been booked by {guest.name}!"
+        self.messaging_service.send_message(guest.email, owner.email, content)
+        print(f"[BookingObserver] Notification sent from {guest.email} to {owner.email}")
 
 class BookingService:
     def __init__(self, car_service, auth_service):
@@ -14,9 +20,9 @@ class BookingService:
     def add_observer(self, observer):
         self.observers.append(observer)
 
-    def notify_observers(self, message):
+    def notify_observers(self, guest, owner, car_model):
         for observer in self.observers:
-            observer.update(message)
+            observer.update(guest, owner, car_model)
 
     def book_car(self, car_index, days):
         user = SessionManager().get_user()
@@ -105,7 +111,7 @@ class BookingService:
 
         print("\n=== Booking Confirmed ===")
         print(f"Booking confirmed for {car.model} for {days} days.")
-        self.notify_observers(f"Booking complete: {user.name} confirmed booking for {car.model}.")
+        self.notify_observers(user, owner, car.model)
         del self.active_bookings[user.email]
 
 

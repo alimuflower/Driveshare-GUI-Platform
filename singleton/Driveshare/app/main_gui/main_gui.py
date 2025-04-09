@@ -18,8 +18,8 @@ class DriveShareGUI:
         self.auth_service = AuthService()
         self.car_service = CarService()
         self.booking_service = BookingService(self.car_service, self.auth_service)
-        self.booking_service.add_observer(BookingObserver())
         self.messaging_service = MessagingService()
+        self.booking_service.add_observer(BookingObserver(self.messaging_service))
         self.review_service = ReviewService()
         self.payment_proxy = PaymentProxy()
 
