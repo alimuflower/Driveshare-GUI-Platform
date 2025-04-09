@@ -8,7 +8,6 @@ DriveShare is a GUI-based Python application that allows users to share and rent
 
 ### ✅ User Registration & Authentication
 - Register as a **Host** or **Guest**.
-- Secure login with SHA-256 password hashing.
 - Password recovery via **Chain of Responsibility** pattern with 3 security questions.
 
 ### 🚘 Car Listing and Management (Hosts)
@@ -27,7 +26,6 @@ DriveShare is a GUI-based Python application that allows users to share and rent
 
 ### 💵 Simulated Payment
 - Guests "pay" for rentals using a balance system.
-- Supports promo codes (e.g., `firstride` = 10% off).
 - **Proxy Pattern** secures transaction logic.
 
 ### 📜 Rental History & Reviews
@@ -74,19 +72,32 @@ python -m unittest discover tests
 
 ## 📁 Project Structure
 ```
-driveshare/
-├── app/
-│   ├── models/
-│   ├── services/
-│   ├── patterns/
-│   └── main_gui/
-│       ├── main_gui.py
-│       ├── vehicle_forms.py
-│       ├── guest_features.py
-│       └── host_features.py
-├── tests/
-│   ├── __init__.py
-│   └── test_driveshare_features.py
+singleton/
+├── driveshare/
+|  ├── app/
+│     ├── models/
+│         ├── car.py
+│         ├── guest.py
+│         └── host.py
+│     ├── services/
+│         ├── auth_service.py
+│         ├── booking_service.py
+│         ├── car_service.py
+│         ├── messaging_service.py
+│         ├── payment_service.py
+│         └── review_service.py
+│     ├── patterns/
+│         ├── singleton.py
+│         ├── builder.py
+│         └── class_strategy.py
+│     └── main_gui/
+│         ├── main_gui.py
+│         ├── vehicle_forms.py
+│         ├── guest_features.py
+│         └── host_features.py
+|  ├── tests/
+|     ├── __init__.py
+|     └── test_driveshare_features.py
 ├── README.md
 ```
 
@@ -99,11 +110,9 @@ driveshare/
 
 ---
 
-## 📜 License
-This project is for educational purposes and is not intended for production use.
-
----
 
 ## ✨ Author
-Ali Almuthafar — [GitHub](https://github.com/alimuflower)
+Ali Almuthafar
+Abraham Abdulkarim
+Alexis Whisnant
 
